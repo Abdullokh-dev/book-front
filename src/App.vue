@@ -1,26 +1,40 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- Kontainer boshlandi -->
+    <div class="container-fluid">
+        <HeaderRow />
+
+        <!-- Main qator boshlandi -->
+        <div class="row mt-4 ">
+            <CategoriesCol />
+
+            <!-- Kontent boshlandi -->
+            <div class="col-12 col-md-10 mt-4 mt-md-0">
+                <router-view />
+            </div>
+            <!-- Kontent tugadi -->
+
+        </div>
+        <!-- Main qator boshlandi -->
+
+        <FooterRow />
+    </div>
+    <!-- Kontainer tugadi -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import HeaderRow from "@/components/HeaderRow";
+import CategoriesCol from "@/components/CategoriesCol";
+import FooterRow from "@/components/FooterRow";
 
 export default {
     name: 'App',
     components: {
-        HelloWorld
+         FooterRow, CategoriesCol, HeaderRow
     }
 }
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
+
 </style>
