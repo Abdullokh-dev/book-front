@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col">
-            <footer class="bg-dark text-light p-5">
+            <footer class="bg-dark text-light p-5 mt-4">
                 © All rights reserved
             </footer>
         </div>

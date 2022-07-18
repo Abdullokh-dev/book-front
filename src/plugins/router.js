@@ -9,7 +9,12 @@ const routes = [
     {
         path: '/book-info',
         component: () => import('../pages/BookInfoPage')
-    }
+    },
+    {
+        path: '/login',
+        component: () => import('../pages/LoginPage')
+    },
+
 ]
 
 export default createRouter({
