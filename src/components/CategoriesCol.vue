@@ -1,18 +1,31 @@
 <template>
     <div class="col-12 col-md-2">
-        <ul class="list-group">
-            <li class="list-group-item" aria-current="true">Detektiv</li>
-            <li class="list-group-item active">Klassika</li>
-            <li class="list-group-item">Dramma</li>
-            <li class="list-group-item">Romantika</li>
-            <li class="list-group-item">Komediya</li>
-        </ul>
+        <div class="list-group">
+            <a
+                v-for="category of getCategories"
+                v-bind:key="category.id"
+                href="#"
+                class="list-group-item list-group-item-action"
+            >
+                {{ category.name }}
+            </a>
+        </div>
     </div>
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
 export default {
-    name: "CategoriesCol"
+    name: "CategoriesCol",
+    computed: {
+        ...mapGetters(['getCategories'])
+    },
+    methods: {
+        ...mapActions(['fetchCategories'])
+    },
+    mounted() {
+        this.fetchCategories()
+    }
 }
 </script>
 
