@@ -7,6 +7,10 @@ const routes = [
         component: HomePage
     },
     {
+        path: '/categories/:id',
+        component: HomePage
+    },
+    {
         path: '/book-info',
         component: () => import('../pages/BookInfoPage')
     },

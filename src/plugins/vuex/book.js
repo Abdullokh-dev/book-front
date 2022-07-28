@@ -2,10 +2,16 @@ import axios from "./axios";
 
 export default {
     actions: {
-        fetchBooks(context) {
+        fetchBooks(context, categoryId = null) {
+            let categoryUrl = ''
+
+            if(categoryUrl !== null) {
+                categoryUrl = '?category=' + categoryId
+            }
+
             return new Promise((resolve, reject) => {
                 axios
-                    .get('http://localhost:8888/api/books')
+                    .get('http://localhost:8888/api/books' + categoryUrl)
                     .then((response) => {
                         console.log('Kitoblar olindi')
                         console.log(response)

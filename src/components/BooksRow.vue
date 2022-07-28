@@ -33,12 +33,16 @@ export default {
           return 'Kitoblar'
       }
     },
-
     mounted() {
         console.log('Kitoblar komponenti App ga ulandi')
 
-        this.fetchBooks()
+        this.fetchBooks(this.$route.params.id)
     },
+    watch: {
+        '$route.params.id'() {
+            this.fetchBooks(this.$route.params.id)
+        }
+    }
 }
 </script>
 
