@@ -7,19 +7,16 @@ export default {
                 axios
                     .post('http://localhost:8888/api/users/auth', data)
                     .then((response) => {
-                        console.log('Token olindi')
+                        console.log('Token received')
                         console.log(response)
 
                         context.commit('updateToken', response.data.token)
                         resolve()
                     })
                     .catch(() => {
-                        console.log('token olishda xatolik yuz berdi')
+                        console.error('something went wrong while receiving token')
 
                         reject()
-                    })
-                    .finally(() => {
-                        console.log('Bu funksiya har doim ishlaydi. Yoki then() dan kein, yoki catch() dan kein')
                     })
             })
 

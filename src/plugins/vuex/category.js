@@ -7,7 +7,7 @@ export default {
                 axios
                     .get('http://localhost:8888/api/categories')
                     .then((response) => {
-                        console.log('Kategoriyalar olindi')
+                        console.log('Categories fetched')
                         console.log(response)
 
                         let categories = {
@@ -19,7 +19,7 @@ export default {
                         resolve()
                     })
                     .catch(() => {
-                        console.log('Kategoriyalar olishda xatolik yuz berdi')
+                        console.error('something went wrong while fetching categories')
                         reject()
                     })
             })

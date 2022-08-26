@@ -11,7 +11,7 @@ const routes = [
         component: HomePage
     },
     {
-        path: '/book-info',
+        path: '/book-info/:bookId',
         component: () => import('../pages/BookInfoPage')
     },
     {

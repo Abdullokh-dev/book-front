@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <!-- Kitob boshlandi -->
+        <!-- Book start -->
         <h1>{{booksTitle}}</h1>
         <div
             v-for="book of getBooks"
@@ -11,11 +11,11 @@
                 <div class="card-body">
                     <h5 class="card-title"> {{book.name}} </h5>
                     <p class="card-text"> {{book.description}} </p>
-                    <router-link to="book-info" class="btn btn-primary"> O'qish </router-link>
+                    <router-link :to="'/book-info/' + book.id" class="btn btn-primary"> Read </router-link>
                 </div>
             </div>
         </div>
-        <!-- Kitob tugadi -->
+        <!-- Book end -->
     </div>
 </template>
 
@@ -25,17 +25,12 @@ import {mapActions, mapGetters} from "vuex";
 export default {
     name: "BooksRow",
     methods: {
-        ...mapActions(['fetchBooks'])
+        ...mapActions(['fetchBooks']),
     },
     computed: {
       ...mapGetters(['getBooks']),
-      booksTitle() {
-          return 'Kitoblar'
-      }
     },
     mounted() {
-        console.log('Kitoblar komponenti App ga ulandi')
-
         this.fetchBooks(this.$route.params.id)
     },
     watch: {

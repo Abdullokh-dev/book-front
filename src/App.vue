@@ -1,24 +1,24 @@
 <template>
-    <!-- Kontainer boshlandi -->
+    <!-- Container -->
     <div class="container-fluid">
         <HeaderRow />
 
-        <!-- Main qator boshlandi -->
+        <!-- Main row  -->
         <div class="row mt-4 ">
             <CategoriesCol />
 
-            <!-- Kontent boshlandi -->
+            <!-- Content -->
             <div class="col-12 col-md-10 mt-4 mt-md-0">
                 <router-view />
             </div>
-            <!-- Kontent tugadi -->
+            <!-- Content -->
 
         </div>
-        <!-- Main qator boshlandi -->
+        <!-- Main row -->
 
-        <FooterRow />
+        <FooterRow author="@Abdullokh_dev"/>
     </div>
-    <!-- Kontainer tugadi -->
+    <!-- Container -->
 </template>
 
 <script>
